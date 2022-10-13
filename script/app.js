@@ -38,8 +38,16 @@ let showResult = queryResponse => {
 	// Geef deze functie de periode tussen sunrise en sunset mee en het tijdstip van sunrise.
 };
 
+const getData = (endpoint) => {
+	return fetch(endpoint)
+	.then((r) => r.json())
+	.catch((e) => console.error(e));
+}
+
 // 2 Aan de hand van een longitude en latitude gaan we de yahoo wheater API ophalen.
 let getAPI = (lat, lon) => {
+	const data = await getData(getEindpoint(lat, lon));
+	console.log(data);
 	// Eerst bouwen we onze url op
 	// Met de fetch API proberen we de data op te halen.
 	// Als dat gelukt is, gaan we naar onze showResult functie.
