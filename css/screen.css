@@ -1,248 +1,243 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
-@font-face {
-    font-family: 'Work-Sans';
-    font-weight: 400;
-    src: url('../fonts/WorkSans-Regular.ttf') format('woff2');
-  }
-
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
 :root {
     /* colors */
-    --color-front: #0F3557;
-    --color-back: #CCE7FF;
-    --color-border: var(--color-front);
-
+    --color-light: hsla(208, 100%, 90%, 1);
+    --color-dark: hsla(208, 100%, 20%, 1);
+  
+    --color-front: var(--color-dark);
+    --color-back: var(--color-light);
     /* opacity */
-
+  
     /* transitions */
-}
-
-/*------------------------------------*\
-#GENERIC
-\*------------------------------------*/
-
-/*
-    Generic: Page
-    ---
-    Global page styles + universal box-sizing:
-*/
-body{
-    height: 100vh;
-}
-
-html {
+  }
+  .is-night {
+    --color-front: var(--color-light);
+    --color-back: var(--color-dark);
+  }
+  
+  /*------------------------------------*\
+  #GENERIC
+  \*------------------------------------*/
+  
+  /*
+      Generic: Page
+      ---
+      Global page styles + universal box-sizing:
+  */
+  
+  html {
+    font-feature-settings: 'zero' 1;
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'Work-Sans',Helvetica, arial, sans-serif;
+    font-family: 'Work Sans', sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-back);
     color: var(--color-front);
-    font-feature-settings: "zero" 1;
-    fill: var(--color-front);
-}
-
-*,
-*:before,
-*:after {
+    background-color: var(--color-back);
+  }
+  
+  *,
+  *:before,
+  *:after {
     box-sizing: inherit;
-}
-
-/*
-* Remove text-shadow in selection highlight:
-* https://twitter.com/miketaylr/status/12228805301
-*
-* Customize the background color to match your design.
-*/
-
-/* ::-moz-selection {
-    background: red;
-    color: white;
-    text-shadow: none;
-} */
-
-::selection {
+  }
+  
+  /*
+  * Remove text-shadow in selection highlight:
+  * https://twitter.com/miketaylr/status/12228805301
+  *
+  * Customize the background color to match your design.
+  */
+  
+  /* ::-moz-selection {
+      background: red;
+      color: white;
+      text-shadow: none;
+  } */
+  
+  ::selection {
     background: var(--color-front);
     color: white;
     text-shadow: none;
-}
-
-/*------------------------------------*\
-#Elements
-\*------------------------------------*/
-
-/*
-Elements: Images
----
-Default markup for images to make them responsive
-*/
-
-img {
+  }
+  
+  /*------------------------------------*\
+  #Elements
+  \*------------------------------------*/
+  
+  /*
+  Elements: Images
+  ---
+  Default markup for images to make them responsive
+  */
+  
+  img {
     max-width: 100%;
     vertical-align: top;
-}
-
-/*
-    Elements: typography
-    ---
-    Default markup for typographic elements
-*/
-
-h1,
-h2,
-h3 {
+  }
+  
+  /*
+      Elements: typography
+      ---
+      Default markup for typographic elements
+  */
+  
+  h1,
+  h2,
+  h3 {
     font-weight: 700;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 36px;
     line-height: 48px;
     margin: 0 0 24px;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 32px;
     line-height: 40px;
     margin: 0 0 24px;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 26px;
     line-height: 32px;
     margin: 0 0 24px;
-}
-
-h4,
-h5,
-h6 {
+  }
+  
+  h4,
+  h5,
+  h6 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     margin: 0 0 24px;
-}
-
-p,
-ol,
-ul,
-dl,
-table,
-address,
-figure {
+  }
+  
+  p,
+  ol,
+  ul,
+  dl,
+  table,
+  address,
+  figure {
     margin: 0 0 24px;
-}
-
-ul,
-ol {
+  }
+  
+  ul,
+  ol {
     padding-left: 24px;
-}
-
-li ul,
-li ol {
+  }
+  
+  li ul,
+  li ol {
     margin-bottom: 0;
-}
-
-blockquote {
+  }
+  
+  blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
     margin: 0 0 24px;
-}
-
-blockquote * {
+  }
+  
+  blockquote * {
     font-size: inherit;
     line-height: inherit;
-}
-
-figcaption {
+  }
+  
+  figcaption {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     margin-top: 8px;
-}
-
-hr {
+  }
+  
+  hr {
     border: 0;
     height: 1px;
     background: LightGrey;
     margin: 0 0 24px;
-}
-
-a {
+  }
+  
+  a {
     color: red;
     outline-color: red;
     outline-width: medium;
     outline-offset: 2px;
-}
-
-a:visited,
-a:active {
+  }
+  
+  a:visited,
+  a:active {
     color: red;
-}
-
-a:hover,
-a:focus {
+  }
+  
+  a:hover,
+  a:focus {
     color: red;
-}
-
-label,
-input {
+  }
+  
+  label,
+  input {
     display: block;
-}
-
-select {
+  }
+  
+  select {
     width: 100%;
-}
-
-input::placeholder {
+  }
+  
+  input::placeholder {
     color: gray;
-}
-
-/*------------------------------------*\
-#OBJECTS
-\*------------------------------------*/
-
-/*
-    Object: Button reset
-    ---
-    Small button reset object
-*/
-
-.o-button-reset {
+  }
+  
+  /*------------------------------------*\
+  #OBJECTS
+  \*------------------------------------*/
+  
+  /*
+      Object: Button reset
+      ---
+      Small button reset object
+  */
+  
+  .o-button-reset {
     border: none;
     margin: 0;
     padding: 0;
     width: auto;
     overflow: visible;
     background: transparent;
-
+  
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
-
+  
     /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
     line-height: normal;
-
+  
     /* Corrects font smoothing for webkit */
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-
+  
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
-}
-
-/*
-    Object: Hide accessible
-    ---
-    Accessibly hide any element
-*/
-
-.o-hide-accessible {
+  }
+  
+  /*
+      Object: Hide accessible
+      ---
+      Accessibly hide any element
+  */
+  
+  .o-hide-accessible {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -251,197 +246,200 @@ input::placeholder {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
-}
-
-/*------------------------------------*\
-#COMPONENTS
-\*------------------------------------*/
-
-.c-app{
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 32px;
-}
-
-.c-app__summary{
-    font-size: 28px;
-    line-height: 40px;
-}
-/*
-    Component: Logo
-    ---
-    Website main logo
-*/
-
-.c-logo {
-
-}
-
-/*
-    Component: Sun
-    ---
-    The sun
-*/
-
-.c-sun {
-
-}
-
-.c-logo .c-sun {
-
-}
-
-/*
-    Component: App
-    ---
-    Main app wrapper
-*/
-
-/*
-    Component: Horizon
-    ---
-    Horizon with sun visualisation
-*/
-.c-horizon {
-    margin-bottom: 2.125rem; /* 34px*/
-}
-
-.c-horizon__line {
+  }
+  
+  /*------------------------------------*\
+  #COMPONENTS
+  \*------------------------------------*/
+  
+  /*
+      Component: Logo
+      ---
+      Website main logo
+  */
+  
+  .c-logo {
+    font-size: 1rem;
+    gap: 0.5rem;
+    display: flex;
+    line-height: 1rem;
+    align-items: center;
+    margin-bottom: auto;
+  }
+  
+  /*
+      Component: Sun
+      ---
+      The sun
+  */
+  
+  .c-sun {
+    fill: var(--color-front);
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+  
+  .c-logo .c-sun {
+  }
+  
+  /*
+      Component: App
+      ---
+      Main app wrapper
+  */
+  .c-app {
+    min-height: 100vh;
+    max-width: 25rem;
+    display: flex;
+    padding: 2rem 2rem 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .c-app__summary {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+  /*
+      Component: Horizon
+      ---
+      Horizon with sun visualisation
+  */
+  .c-horizon__line {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(--color-border);
+    border-top: var(--color-front) 1px solid;
     padding-top: 0.5rem;
-}
-
-
-.c-horizon__sky-wrapper {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    padding-top: 22px;
-    padding-right: 40px;
-}
-
-.c-horizon__sky {
-    position: relative;
-    height: 100%;
-}
-
-.c-horizon__sun {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 44px;
-    transform:  translateY(-50%);
-}
-
-.c-horizon__time{
+  }
+  .c-horizon {
+    margin-bottom: 2.125rem;
+  }
+  .c-horizon__time {
     font-size: 0.75rem;
     line-height: 0.875rem;
-}
-
-/*------------------------------------*\
-#UTILITIES
-\*------------------------------------*/
-
-/*
-    Utilities: Mute
-    Mute with opacity
-*/
-.u-muted {
-    opacity: 0.6;
-}
-
-.u-muted, ::selection{
-    opacity: 1;
-}
-
-/*------------------------------------*\
-#STATES
-\*------------------------------------*/
-
-/*
-    Change the theme using CSS vars.
-*/
-
-/* Night version: just switch the light and dark vars */
-.is-night{
-    color: var(--color-back);
-    background-color: var(--color-front);
-    fill: var(--color-back);
-    --color-border: var(--color-back);
   }
-
-/*------------------------------------*\
-#MEDIA
-\*------------------------------------*/
-
-/*
-    Print styles.
-    ---
-    Inlined to avoid the additional HTTP request:
-    http://www.phpied.com/delay-loading-your-print-css/
-*/
-
-@media print {
+  .c-horizon__sky-wrapper {
+    position: relative;
+    height: 12.5rem;
+    overflow: hidden;
+    padding-top: 1.375rem;
+    padding-right: 2.5rem;
+  }
+  
+  .c-horizon__sky {
+    position: relative;
+    height: 100%;
+  }
+  
+  .c-horizon__sun::before {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    content: attr(data-time);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .c-horizon__sun {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      transform:translateY(1.375rem);
+  }
+  
+  /*------------------------------------*\
+  #UTILITIES
+  \*------------------------------------*/
+  
+  /*
+      Utilities: Mute
+      Mute with opacity
+  */
+  .u-muted {
+    opacity: 0.5;
+  }
+  /*------------------------------------*\
+  #STATES
+  \*------------------------------------*/
+  
+  /*
+      Change the theme using CSS vars.
+  */
+  
+  /* Night version: just switch the light and dark vars */
+  
+  /*------------------------------------*\
+  #MEDIA
+  \*------------------------------------*/
+  
+  /*
+      Print styles.
+      ---
+      Inlined to avoid the additional HTTP request:
+      http://www.phpied.com/delay-loading-your-print-css/
+  */
+  
+  @media print {
     *,
     *:before,
     *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
-        http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
+      background: transparent !important;
+      color: #000 !important;
+      /* Black prints faster:
+          http://www.sanbeiji.com/archives/953 */
+      box-shadow: none !important;
+      text-shadow: none !important;
     }
     a,
     a:visited {
-        text-decoration: underline;
+      text-decoration: underline;
     }
     a[href]:after {
-        content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
     }
     abbr[title]:after {
-        content: " (" attr(title) ")";
+      content: ' (' attr(title) ')';
     }
     /*
-    * Don't show links that are fragment identifiers,
-    * or use the `javascript:` pseudo protocol
-    */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+      * Don't show links that are fragment identifiers,
+      * or use the `javascript:` pseudo protocol
+      */
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+      content: '';
     }
     pre {
-        white-space: pre-wrap !important;
+      white-space: pre-wrap !important;
     }
     pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+      border: 1px solid #999;
+      page-break-inside: avoid;
     }
     /*
-    * Printing Tables:
-    * http://css-discuss.incutio.com/wiki/Printing_Tables
-    */
+      * Printing Tables:
+      * http://css-discuss.incutio.com/wiki/Printing_Tables
+      */
     thead {
-        display: table-header-group;
+      display: table-header-group;
     }
     tr,
     img {
-        page-break-inside: avoid;
+      page-break-inside: avoid;
     }
     p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
+      orphans: 3;
+      widows: 3;
     }
     h2,
     h3 {
-        page-break-after: avoid;
+      page-break-after: avoid;
     }
-}
+  }
+  
